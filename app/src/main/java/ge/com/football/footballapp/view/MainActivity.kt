@@ -1,4 +1,4 @@
-package ge.com.football.footballapp
+package ge.com.football.footballapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
+import ge.com.football.footballapp.R
 import ge.com.football.footballapp.base.MatchViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -51,6 +52,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(it), Toast.LENGTH_SHORT).show()
             } else {
                 retryButton.visibility =  View.GONE
+            }
+        })
+
+        viewModel.matchInfo.observe(this, Observer {
+            if (it != null){
+
             }
         })
     }

@@ -1,3 +1,5 @@
 package ge.com.football.footballapp.net.utils
 
-const val MATCH_URL: String = "https://www.mocky.io/"
+const val MATCH_URL: String = "http://www.mocky.io/"
+
+const val RESPONSE_OK: Int = 1
