@@ -8,7 +8,6 @@ import ge.com.football.footballapp.model.ModelMatch;
 public class ContentAdapter extends RecyclerView.Adapter {
     private final static int VIEW_TYPE_HEADER = 1;
     private final static int VIEW_TYPE_ACTION = 2;
-    private final static int VIEW_TYPE_EMPTY = 3;
 
     private ModelMatch modelMatch;
 
@@ -34,6 +33,6 @@ public class ContentAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return modelMatch != null ? modelMatch.getMatchSummary().getSummaries().size() * 2 + 1 : 0;
+        return modelMatch != null ? modelMatch.getMatchSummary().getSummaries().size() + 1 : 0;
     }
 }
