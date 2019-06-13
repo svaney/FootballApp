@@ -6,3 +6,7 @@ data class ModelTeam(
     val score: Int,
     val ballPosition: Int
 )
+
+fun ModelTeam.getBallPosDisplayedText():String{
+    return ballPosition.toString() + "%"
+}

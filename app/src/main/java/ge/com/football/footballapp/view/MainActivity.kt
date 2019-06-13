@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ge.com.football.footballapp.R
 import ge.com.football.footballapp.base.MatchViewModel
@@ -58,6 +59,10 @@ class MainActivity : AppCompatActivity() {
         viewModel.matchInfo.observe(this, Observer {
             if (it != null){
 
+                recyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+                val adapter = ContentAdapter()
+                adapter.setModelMatch(it)
+                recyclerView.adapter = adapter
             }
         })
     }

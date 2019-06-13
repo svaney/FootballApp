@@ -1,8 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_marginLeft="@dimen/side_margin"
+        app:cardCornerRadius="12dp"
+        android:layout_marginBottom="-12dp"
+        android:paddingBottom="12dp"
+        android:layout_marginRight="@dimen/side_margin" android:layout_marginTop="@dimen/side_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="vertical">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/topTextWrapper" android:layout_gravity="center"
+                      android:layout_margin="@dimen/side_margin">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textSize="@dimen/text_size_medium"
+                      android:id="@+id/dateTextView"
+                      android:textColor="@color/colorPrimary"
+                      android:layout_marginRight="8dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textSize="@dimen/text_size_medium"
+                      android:textColor="@color/textColorGrey"
+                      android:id="@+id/stadiumNameTextView"/>
+        </LinearLayout>
 
 
-</LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topTextWrapper">
+
+
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                       android:src="@drawable/ic_star"
+                       android:layout_gravity="center"
+                       app:layout_constraintEnd_toStartOf="@+id/teamOneImage"
+                       app:layout_constraintTop_toTopOf="@+id/teamOneImage"
+                       app:layout_constraintBottom_toTopOf="@+id/teamOneName"/>
+
+            <ImageView android:layout_width="64dp" android:layout_height="64dp"
+                       app:layout_constraintEnd_toStartOf="@+id/scoreWrapper"
+                       app:layout_constraintStart_toStartOf="parent"
+                       android:id="@+id/teamOneImage"
+                       android:layout_margin="8dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/teamOneName" android:textColor="@color/textColorBlack"
+                      android:textSize="@dimen/text_size_medium"
+                      android:layout_marginTop="4dp"
+                      app:layout_constraintTop_toBottomOf="@+id/teamOneImage"
+                      app:layout_constraintEnd_toEndOf="@+id/teamOneImage"
+                      android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/teamOneImage"/>
+
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:orientation="vertical"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                          android:id="@+id/scoreWrapper"
+                          app:layout_constraintTop_toTopOf="parent">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/scoreTextView"
+                          android:textSize="22sp"
+                          android:textColor="@color/textColorBlack"
+                          android:textStyle="bold"/>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:id="@+id/timeTextView"
+                          android:textSize="14sp"
+                          android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+
+            <ImageView android:layout_width="64dp" android:layout_height="64dp"
+                       android:id="@+id/teamTwoImage"
+                       app:layout_constraintStart_toEndOf="@+id/scoreWrapper"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       android:layout_margin="8dp"/>
+
+            <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                       android:src="@drawable/ic_star"
+                       app:layout_constraintStart_toEndOf="@+id/teamTwoImage"
+                       app:layout_constraintBottom_toTopOf="@+id/teamTwoName"
+                       app:layout_constraintTop_toTopOf="@+id/teamTwoImage"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/teamTwoName" android:textColor="@color/textColorBlack"
+                      android:textSize="@dimen/text_size_medium"
+                      android:layout_marginTop="4dp"
+                      app:layout_constraintTop_toBottomOf="@+id/teamTwoImage"
+                      app:layout_constraintEnd_toEndOf="@+id/teamTwoImage"
+                      android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="@+id/teamTwoImage"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:background="@drawable/rounded_background"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="@dimen/side_margin"
+                android:paddingRight="@dimen/side_margin"
+                android:layout_marginRight="@dimen/side_margin"
+        >
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_alignParentLeft="true"
+                      android:text="Overview"
+                      android:textColor="@color/colorPrimary"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_centerHorizontal="true"
+                      android:text="Statistic"/>
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_alignParentRight="true"
+                      android:text="Line up"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_margin="@dimen/side_margin">
+
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_alignParentLeft="true"
+                      android:id="@+id/teamOneBallPos"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_centerHorizontal="true"
+                      android:text="Ball Possession"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_alignParentRight="true"
+                      android:id="@+id/teamTwoBallPos"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

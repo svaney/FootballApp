@@ -1,5 +1,6 @@
 package ge.com.football.footballapp.model.utils
 
+
 enum class MatchActionType(val value: Int) {
     GOAL(1),
     YELLOW_CARD(2),
