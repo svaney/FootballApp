@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.list_item_match_header.view.*
 import android.opengl.ETC1.getWidth
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.RelativeLayout
+import kotlinx.android.synthetic.main.list_item_action.view.*
 
 
 class ContentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -190,7 +191,7 @@ class ContentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     internal inner class ActionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        //    val team1Logo = itemView.
+
     }
 
 
