@@ -1,18 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                   android:orientation="horizontal"
-                                   android:layout_width="match_parent"
-                                   app:cardCornerRadius="0dp"
-                                   android:layout_marginLeft="@dimen/side_margin"
-                                   android:layout_marginRight="@dimen/side_margin"
-                                   android:layout_height="32dp">
 
-    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-        <View android:layout_width="1dp" android:layout_height="match_parent"
-              android:background="@color/colorPrimary" android:layout_centerHorizontal="true"/>
 
-    </RelativeLayout>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="0dp"
+        android:layout_marginLeft="@dimen/side_margin"
+        android:layout_marginRight="@dimen/side_margin"
+        android:layout_height="64dp">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <View android:layout_width="1px" android:layout_height="match_parent"
+              android:background="@color/lightGrey" app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              android:id="@+id/view"/>
+
+        <ImageView android:layout_width="8dp" android:layout_height="8dp"
+                   android:src="@drawable/ic_dot"
+                   app:layout_constraintTop_toTopOf="@+id/view"
+                   app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                      android:orientation="horizontal" android:weightSum="2">
+
+            <RelativeLayout android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="1" android:orientation="horizontal"
+                            android:layout_marginRight="@dimen/side_margin">
+
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                           android:src="@drawable/ic_goal"
+                           android:id="@+id/teamOneActionLargeImage"
+                           android:layout_alignParentRight="true"
+                           android:layout_centerVertical="true"/>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="vertical" android:id="@+id/playerImagesWrapper"
+                              android:layout_alignParentLeft="true"
+                              android:paddingLeft="@dimen/side_margin"
+                              android:layout_centerVertical="true">
+
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                               android:id="@+id/teamOnePlayerOneImage" android:src="@drawable/ic_goal"
+                               android:layout_marginBottom="-14dp"/>
+
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                               android:id="@+id/teamOnePlayerSubstitueImage" android:src="@drawable/ic_goal"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_centerVertical="true"
+                              android:layout_marginLeft="8dp"
+                              android:layout_toRightOf="@id/playerImagesWrapper">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textSize="@dimen/text_size_small" android:textColor="@color/textColorGrey"
+                              android:text="asdasd" android:id="@+id/teamOneActionTime"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textSize="@dimen/text_size_medium" android:textColor="@color/textColorBlack"
+                              android:text="asdasd" android:id="@+id/teamOnePlayerName"/>
+
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textSize="@dimen/text_size_medium" android:textColor="@color/textColorGrey"
+                              android:text="asdasd" android:id="@+id/teamOneSubstituePlayer"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="0dp" android:layout_height="match_parent"
+                            android:layout_weight="1" android:orientation="horizontal"
+                            android:layout_marginLeft="@dimen/side_margin">
+
+
+                <ImageView android:layout_width="24dp" android:layout_height="24dp"
+                           android:src="@drawable/ic_goal"
+                           android:layout_centerVertical="true"
+                           android:layout_alignParentLeft="true"
+                           android:id="@+id/teamTwoActionLargeImage"/>
+
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="vertical" android:id="@+id/playerTwoImagesWrapper"
+                              android:layout_alignParentRight="true"
+                              android:paddingRight="@dimen/side_margin"
+                              android:layout_centerVertical="true">
+
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                               android:id="@+id/teamTwoPlayerOneImage" android:src="@drawable/ic_goal"
+                               android:layout_marginBottom="-14dp"/>
+
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp"
+                               android:id="@+id/teamTwoPlayerSubstitueImage" android:src="@drawable/ic_goal"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:orientation="vertical"
+                              android:layout_centerVertical="true"
+                              android:layout_toLeftOf="@id/playerTwoImagesWrapper"
+                              android:layout_marginRight="8dp">
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textSize="@dimen/text_size_small" android:textColor="@color/textColorGrey"
+                              android:text="asdasd" android:id="@+id/teamTwoActionTime"/>
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textSize="@dimen/text_size_medium" android:textColor="@color/textColorBlack"
+                              android:text="asdasd" android:id="@+id/teamTwoPlayerName"/>
+
+
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:textSize="@dimen/text_size_medium" android:textColor="@color/textColorGrey"
+                              android:text="asdasd" android:id="@+id/teamTwoSubstituePlayer"/>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
